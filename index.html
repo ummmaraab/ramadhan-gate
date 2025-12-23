@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>R15 // Gate</title>
+  <style>
+    body{margin:0;background:#0b0b0f;color:#e7d6a3;font-family:system-ui,Segoe UI,Arial}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 20px}
+    .card{border:1px solid rgba(231,214,163,.25);border-radius:18px;padding:22px;background:rgba(255,255,255,.03)}
+    input{width:100%;padding:14px 12px;border-radius:12px;border:1px solid rgba(231,214,163,.25);
+      background:#07070a;color:#e7d6a3;font-size:16px;letter-spacing:.08em;text-transform:uppercase}
+    button{margin-top:12px;width:100%;padding:14px;border-radius:12px;border:0;background:#b08d2f;color:#0b0b0f;
+      font-weight:700;font-size:16px;cursor:pointer}
+    .small{opacity:.75;font-size:13px;margin-top:12px}
+    pre{white-space:pre-wrap;word-break:break-word;background:#07070a;border:1px solid rgba(231,214,163,.25);
+      padding:14px;border-radius:12px;color:#e7d6a3}
+    a{color:#e7d6a3}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div style="letter-spacing:.25em;opacity:.8">R15 // GATE</div>
+      <h1 style="margin:10px 0 14px;font-size:28px">ENTER KEY</h1>
+
+      <input id="k" placeholder="KEY-2" autocomplete="off" />
+      <button onclick="go()">UNLOCK</button>
+      <div class="small">Hint: hasil biner dari polling (A=0, B=1).</div>
+
+      <div id="ok" class="hidden" style="margin-top:18px">
+        <h2 style="margin:0 0 10px;font-size:18px">STEP 3</h2>
+        <p style="margin:0 0 12px;opacity:.9">
+          Decode blok ini. Hasilnya adalah petunjuk untuk STEP 4.
+        </p>
+        <pre id="blob">QkFTRTY0X0JMT0NLX0RJU0lOSQ==</pre>
+
+        <p style="margin:12px 0 0;opacity:.9">
+          Download file asli (STEP 4):
+          <a href="PASTE_DRIVE_LINK_HERE" target="_blank" rel="noreferrer">OPEN</a>
+        </p>
+      </div>
+
+      <div id="bad" class="hidden" style="margin-top:12px;color:#ffb4b4">
+        Key salah. Ulangi.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // GANTI ini dengan KEY-2 kamu:
+    const KEY2 = "IQRA97";
+
+    function go(){
+      const v = (document.getElementById("k").value || "").trim().toUpperCase();
+      document.getElementById("bad").classList.add("hidden");
+      if(v === KEY2){
+        document.getElementById("ok").classList.remove("hidden");
+      } else {
+        document.getElementById("bad").classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
